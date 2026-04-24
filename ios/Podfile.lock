@@ -1203,10 +1203,18 @@ PODS:
   - Firebase/Firestore (12.12.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 12.12.0)
+  - Firebase/Storage (12.12.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 12.12.0)
   - firebase_core (4.7.0):
     - Firebase/CoreOnly (= 12.12.0)
     - Flutter
+  - firebase_storage (13.3.0):
+    - Firebase/Storage (= 12.12.0)
+    - firebase_core
+    - Flutter
   - FirebaseAppCheckInterop (12.12.0)
+  - FirebaseAuthInterop (12.12.0)
   - FirebaseCore (12.12.1):
     - FirebaseCoreInternal (~> 12.12.0)
     - GoogleUtilities/Environment (~> 8.1)
@@ -1236,6 +1244,13 @@ PODS:
     - leveldb-library (~> 1.22)
     - nanopb (~> 3.30910.0)
   - FirebaseSharedSwift (12.12.0)
+  - FirebaseStorage (12.12.1):
+    - FirebaseAppCheckInterop (~> 12.12.0)
+    - FirebaseAuthInterop (~> 12.12.0)
+    - FirebaseCore (~> 12.12.0)
+    - FirebaseCoreExtension (~> 12.12.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GTMSessionFetcher/Core (< 6.0, >= 3.4)
   - Flutter (1.0.0)
   - GoogleUtilities/Environment (8.1.0):
     - GoogleUtilities/Privacy
@@ -1337,6 +1352,7 @@ PODS:
     - gRPC-Core/Privacy (= 1.69.0)
   - gRPC-Core/Interface (1.69.0)
   - gRPC-Core/Privacy (1.69.0)
+  - GTMSessionFetcher/Core (5.2.0)
   - leveldb-library (1.22.6)
   - nanopb (3.30910.0):
     - nanopb/decode (= 3.30910.0)
@@ -1347,6 +1363,7 @@ PODS:
 DEPENDENCIES:
   - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
+  - firebase_storage (from `.symlinks/plugins/firebase_storage/ios`)
   - Flutter (from `Flutter`)
 
 SPEC REPOS:
@@ -1355,15 +1372,18 @@ SPEC REPOS:
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAppCheckInterop
+    - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseCoreExtension
     - FirebaseCoreInternal
     - FirebaseFirestore
     - FirebaseFirestoreInternal
     - FirebaseSharedSwift
+    - FirebaseStorage
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
+    - GTMSessionFetcher
     - leveldb-library
     - nanopb
 
@@ -1372,6 +1392,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/cloud_firestore/ios"
   firebase_core:
     :path: ".symlinks/plugins/firebase_core/ios"
+  firebase_storage:
+    :path: ".symlinks/plugins/firebase_storage/ios"
   Flutter:
     :path: Flutter
 
@@ -1381,17 +1403,21 @@ SPEC CHECKSUMS:
   cloud_firestore: 51d1815d5406b0122715a861bb4eaa0f3ad850a9
   Firebase: aa154fee4e9b8eac17aa42344988865b3e857d33
   firebase_core: 9156a152117c843440b0b990c785aa0259bc5447
+  firebase_storage: ef547439afc96fe8ee856de3878ed28e1c5a88e8
   FirebaseAppCheckInterop: c63ae0d003274f145174849c545ab861593beaf9
+  FirebaseAuthInterop: 917aa3a17ecf144d5f1823b51ef372da06909a4b
   FirebaseCore: 86241206e656f5c80c995e370e6c975913b9b284
   FirebaseCoreExtension: ff6fd42eb5287e71d3e160450de6509733d9ead7
   FirebaseCoreInternal: 7c12fc3011d889085e765e317d7b9fd1cef97af9
   FirebaseFirestore: 01e964d312cf17e56925c955b19798848775a7fd
   FirebaseFirestoreInternal: 9d9fd7eadbe0f19310fd7df06470a04baeaf3f36
   FirebaseSharedSwift: bccaff90721d14bafc14be34f28b77fdd7c91dc9
+  FirebaseStorage: b3682c96ae7016420c1f6eb43d45057a0e909c9f
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   GoogleUtilities: 00c88b9a86066ef77f0da2fab05f65d7768ed8e1
   "gRPC-C++": cc207623316fb041a7a3e774c252cf68a058b9e8
   gRPC-Core: 860978b7db482de8b4f5e10677216309b5ff6330
+  GTMSessionFetcher: 904bdd2a82c635bcd6f44edf94cc8775c5d1d6e6
   leveldb-library: cc8b8f8e013647a295ad3f8cd2ddf49a6f19be19
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
 
