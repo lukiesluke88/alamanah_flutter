@@ -76,14 +76,13 @@ class HomeItemView extends StatelessWidget {
                   children: [
                     Text(
                       user.name,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                     Text(
                       user.email,
-                      style: const TextStyle(fontSize: 14, color: Colors.grey),
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
                   ],
                 ),
@@ -99,7 +98,7 @@ class HomeItemView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(user.mobile),
+              Text(user.mobile, style: Theme.of(context).textTheme.bodyMedium),
 
               const SizedBox(height: 8),
 
@@ -119,7 +118,7 @@ class HomeItemView extends StatelessWidget {
                   Icon(Icons.thumb_up_alt_outlined),
                   SizedBox(width: 4),
                   Text("Like"),
-                  SizedBox(width: 24),
+                  SizedBox(width: 28),
                   Icon(Icons.comment_outlined),
                   SizedBox(width: 4),
                   Text("Comment"),

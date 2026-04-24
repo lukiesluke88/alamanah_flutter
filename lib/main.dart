@@ -1,9 +1,11 @@
 import 'package:alamanah/l10n/app_localizations.dart';
 import 'package:alamanah/navigation_page.dart';
+import 'package:alamanah/theme/app_text_styles.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+
 import 'viewmodels/user_viewmodel.dart';
 
 void main() async {
@@ -36,10 +38,17 @@ class _MyAppState extends State<MyApp> {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 4, 80, 11),
+          fontFamily: 'Poppins',
+          textTheme: const TextTheme(
+            displayLarge: AppTextStyles.headingLarge,
+            displayMedium: AppTextStyles.headingMedium,
+            displaySmall: AppTextStyles.headingSmall,
+            titleLarge: AppTextStyles.titleLarge,
+            titleMedium: AppTextStyles.titleMedium,
+            titleSmall: AppTextStyles.titleSmall,
+            bodyMedium: AppTextStyles.bodyMedium,
+            bodySmall: AppTextStyles.bodySmall,
           ),
-          useMaterial3: true,
         ),
 
         debugShowCheckedModeBanner: false,

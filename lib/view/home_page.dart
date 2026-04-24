@@ -20,8 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        context.read<UserViewModel>().loadUsers());
+    Future.microtask(() => context.read<UserViewModel>().loadUsers());
   }
 
   void _onSearchChanged(String value) {
@@ -79,22 +78,22 @@ class _HomePageState extends State<HomePage> {
                 : vm.users.isEmpty
                 ? const Center(child: Text("No users found."))
                 : RefreshIndicator(
-              onRefresh: _refreshUsers,
-              child: SlidableAutoCloseBehavior(
-                child: ListView.builder(
-                  itemCount: vm.users.length,
-                  itemBuilder: (context, index) {
-                    final user = vm.users[index];
-                    return HomeItemView(
-                      user: user,
-                      index: index,
-                      refreshUsers: _refreshUsers,
-                      editUser: _editUser,
-                    );
-                  },
-                ),
-              ),
-            ),
+                    onRefresh: _refreshUsers,
+                    child: SlidableAutoCloseBehavior(
+                      child: ListView.builder(
+                        itemCount: vm.users.length,
+                        itemBuilder: (context, index) {
+                          final user = vm.users[index];
+                          return HomeItemView(
+                            user: user,
+                            index: index,
+                            refreshUsers: _refreshUsers,
+                            editUser: _editUser,
+                          );
+                        },
+                      ),
+                    ),
+                  ),
           ),
         ],
       ),
