@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'al-amanah-f5734.firebasestorage.app',
     iosBundleId: 'com.example.alamanah',
   );
+
 }
