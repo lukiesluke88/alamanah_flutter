@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "75123046369",
+    "project_id": "al-amanah-f5734",
+    "storage_bucket": "al-amanah-f5734.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75123046369:android:3891779c7c60526d6084a0",
+        "android_client_info": {
+          "package_name": "com.alamanah.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAblbzmKZtz15RiArYYb7wALCi8VJwc-6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75123046369:android:8c998838b3b0ffc16084a0",
+        "android_client_info": {
+          "package_name": "com.example.alamanah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAblbzmKZtz15RiArYYb7wALCi8VJwc-6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75123046369:android:97a5a4995de080ee6084a0",
+        "android_client_info": {
+          "package_name": "com.lukiesluke.alamanah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAblbzmKZtz15RiArYYb7wALCi8VJwc-6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
