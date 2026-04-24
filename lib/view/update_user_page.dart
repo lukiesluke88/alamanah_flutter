@@ -23,6 +23,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
   late TextEditingController _emailController;
   late TextEditingController _ageController;
   late TextEditingController _mobileController;
+  late TextEditingController _mobileDescription;
 
   bool _isSaving = false;
 
@@ -35,6 +36,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
     _emailController = TextEditingController(text: widget.user.email);
     _ageController = TextEditingController(text: widget.user.age.toString());
     _mobileController = TextEditingController(text: widget.user.mobile);
+    _mobileDescription = TextEditingController(text: widget.user.description);
   }
 
   @override
@@ -44,6 +46,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
     _emailController.dispose();
     _ageController.dispose();
     _mobileController.dispose();
+    _mobileDescription.dispose();
     super.dispose();
   }
 
@@ -60,6 +63,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
       email: _emailController.text.trim(),
       age: int.tryParse(_ageController.text) ?? 0,
       mobile: _mobileController.text.trim(),
+      description: _mobileDescription.text.trim(),
     );
 
     try {
@@ -103,7 +107,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
               TextFormField(
                 controller: _nameController,
                 validator: (v) =>
-                v == null || v.isEmpty ? "Name required" : null,
+                    v == null || v.isEmpty ? "Name required" : null,
                 decoration: _inputDecoration("Name"),
               ),
 
@@ -113,7 +117,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
               TextFormField(
                 controller: _lastNameController,
                 validator: (v) =>
-                v == null || v.isEmpty ? "Last name required" : null,
+                    v == null || v.isEmpty ? "Last name required" : null,
                 decoration: _inputDecoration("Last Name"),
               ),
 
@@ -124,7 +128,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
                 controller: _ageController,
                 keyboardType: TextInputType.number,
                 validator: (v) =>
-                v == null || v.isEmpty ? "Age required" : null,
+                    v == null || v.isEmpty ? "Age required" : null,
                 decoration: _inputDecoration("Age"),
               ),
 
@@ -134,7 +138,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
               TextFormField(
                 controller: _emailController,
                 validator: (v) =>
-                v == null || v.isEmpty ? "Email required" : null,
+                    v == null || v.isEmpty ? "Email required" : null,
                 decoration: _inputDecoration("Email"),
               ),
 
@@ -148,6 +152,21 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
 
               const SizedBox(height: 20),
 
+              TextFormField(
+                controller: _mobileDescription,
+                maxLines: 4,
+                minLines: 4,
+                decoration: const InputDecoration(
+                  labelText: "Description (recommended)",
+                  hintText:
+                      "Summarise your responsibilities, skills and achievements.",
+                  alignLabelWithHint: true,
+                  border: OutlineInputBorder(),
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
               Row(
                 children: [
                   Expanded(
@@ -155,12 +174,10 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
                       onPressed: _isSaving ? null : saveUser,
                       child: _isSaving
                           ? const SizedBox(
-                        height: 18,
-                        width: 18,
-                        child: CircularProgressIndicator(
-                          strokeWidth: 2,
-                        ),
-                      )
+                              height: 18,
+                              width: 18,
+                              child: CircularProgressIndicator(strokeWidth: 2),
+                            )
                           : const Text("Save"),
                     ),
                   ),
@@ -172,7 +189,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
@@ -183,9 +200,7 @@ class _UpdateUserPageState extends State<UpdateUserPage> {
   InputDecoration _inputDecoration(String label) {
     return InputDecoration(
       labelText: label,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
     );
   }
 }

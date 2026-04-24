@@ -98,7 +98,9 @@ class HomeItemView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(user.mobile, style: Theme.of(context).textTheme.bodyMedium),
+              Text(user.description ?? '',
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
 
               const SizedBox(height: 8),
 

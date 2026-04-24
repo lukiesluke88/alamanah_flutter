@@ -44,6 +44,7 @@ class UserFirebaseService {
         'mobile': newUser.mobile,
         'email': newUser.email,
         'imageUrl': imageUrl,
+        'description': newUser.description,
 
         'searchKeywords': User.generateSearchKeywords(
           user.name,
@@ -83,6 +84,7 @@ class UserFirebaseService {
       'mobile': user.mobile,
       'email': user.email,
       'imageUrl': user.imageUrl,
+      'description': user.description,
 
       // 🔥 ALWAYS regenerate keywords on update
       'searchKeywords': User.generateSearchKeywords(

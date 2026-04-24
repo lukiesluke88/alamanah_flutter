@@ -11,6 +11,7 @@ class User {
   final String? imageUrl;
   final List<String>? searchKeywords;
   final DateTime? createdAt;
+  final String? description;
 
   User({
     this.id,
@@ -23,6 +24,7 @@ class User {
     this.imageUrl,
     this.searchKeywords,
     this.createdAt,
+    this.description
   });
 
   Map<String, dynamic> toJson() {
@@ -37,6 +39,7 @@ class User {
       'searchKeywords':
           searchKeywords ?? generateSearchKeywords(name, lastName, mobile),
       'createdAt': createdAt,
+      'description': description,
     };
   }
 
@@ -56,6 +59,7 @@ class User {
       createdAt: (json['createdAt'] != null)
           ? (json['createdAt'] as Timestamp).toDate()
           : null,
+      description: json['description'] ?? '',
     );
   }
 
@@ -70,6 +74,7 @@ class User {
     String? imageUrl,
     List<String>? searchKeywords,
     DateTime? createdAt,
+    String? description,
   }) {
     return User(
       id: id ?? this.id,
@@ -82,6 +87,7 @@ class User {
       imageUrl: imageUrl ?? this.imageUrl,
       searchKeywords: searchKeywords ?? this.searchKeywords,
       createdAt: createdAt ?? this.createdAt,
+      description: description ?? this.description,
     );
   }
 
